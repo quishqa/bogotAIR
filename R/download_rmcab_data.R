@@ -1,3 +1,21 @@
+#' Dowload air quality and meterological data from air quality station of RMCAB
+#'
+#' This function download the data from one station of Bogota air quality
+#' network. Missing data is in NA.
+#'
+#' @param aqs_code Integer with the code of the station. See rmcab_aqs().
+#' @param start_date Date to start downloading in dd-mm-yyyy.
+#' @param end_date Date to start downloading in dd-mm-yyyy.
+#'
+#' @return data frame with station data.
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Download data from Usaquen from first week of February
+#' usaquen_code <- 1 # rmcab_aqs
+#' usaquen <- download_rmcab_data(usquen_code, "01-02-2023", "07-02-2023")
+#' }
 download_rmcab_data <- function(aqs_code, start_date, end_date){
   start_date <- paste(start_date, "00:00")
   end_date <- paste(end_date, "23:00")

@@ -1,3 +1,12 @@
+#' Convert list into a data frame
+#' Convert the list from a JSON into a data frame with
+#' date as POSXICt, and parameters in numeric.
+#'
+#' @param data_list
+#'
+#' @return data from air quality station in data frame.
+#' @noRd
+#' @keywords internal
 convert_list_to_df <- function(data_list){
   data <- lapply(data_list, unlist)
   data_df <- do.call("rbind", data)
