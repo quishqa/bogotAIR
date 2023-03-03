@@ -1,11 +1,16 @@
 download_rmcab_data <- function(aqs_code, start_date, end_date){
   start_date <- paste(start_date, "00:00")
   end_date <- paste(end_date, "23:00")
-  url <- "http://rmcab.ambientebogota.gov.co/Report/GetMultiStationsReportNewAsync"
+
+  url <- paste0("http://rmcab.ambientebogota.gov.co/Report/",
+                "GetMultiStationsReportNewAsync")
+  monitors_ids = paste0("[%22S_1_1%22,%22S_1_3%22,%22S_1_4%22,%22S_1_5%22,",
+                        "%22S_1_6%22,%22S_1_7%22,%22S_1_8%22,%22S_1_9%22,",
+                        "%22S_1_10%22,%22S_1_11%22,%22S_1_13%22,%22S_1_16%22]")
 
   query <-  list(
     ListStationId=I(paste0("[", aqs_code, "]")),
-    ListMonitorIds=I("[%22S_1_1%22,%22S_1_3%22,%22S_1_4%22,%22S_1_5%22,%22S_1_6%22,%22S_1_7%22,%22S_1_8%22,%22S_1_9%22,%22S_1_10%22,%22S_1_11%22,%22S_1_13%22,%22S_1_16%22]"),
+    ListMonitorIds=I(monitors_ids),
     FDate=I(date_in_json(start_date)),
     TDate=I(date_in_json(end_date)),
     TB=I("[60]"),
