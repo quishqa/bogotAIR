@@ -1,4 +1,5 @@
 date_in_json <- function(date){
+  date <- as.POSIXct(strptime(date, format = "%d-%m-%Y %H:%M"))
   epoch <- as.numeric(date) * 10000 * 1000
   ticks <- 621355968000000000
   json_ticks <- epoch + ticks

@@ -1,4 +1,6 @@
 download_rmcab_data <- function(aqs_code, start_date, end_date){
+  start_date <- paste(start_date, "00:00")
+  end_date <- paste(end_date, "23:00")
   url <- "http://rmcab.ambientebogota.gov.co/Report/GetMultiStationsReportNewAsync"
 
   query <-  list(
