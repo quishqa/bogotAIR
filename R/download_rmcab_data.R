@@ -22,9 +22,7 @@ download_rmcab_data <- function(aqs_code, start_date, end_date){
 
   url <- paste0("http://rmcab.ambientebogota.gov.co/Report/",
                 "GetMultiStationsReportNewAsync")
-  monitors_ids = paste0("[%22S_1_1%22,%22S_1_3%22,%22S_1_4%22,%22S_1_5%22,",
-                        "%22S_1_6%22,%22S_1_7%22,%22S_1_8%22,%22S_1_9%22,",
-                        "%22S_1_10%22,%22S_1_11%22,%22S_1_13%22,%22S_1_16%22]")
+  monitors_ids = create_monitor_code(aqs_code)
 
   query <-  list(
     ListStationId=I(paste0("[", aqs_code, "]")),
@@ -51,6 +49,6 @@ download_rmcab_data <- function(aqs_code, start_date, end_date){
   n_obs <- data_parsed$count
 
   data_list <- data_aqs[seq(1, n_obs)]
-  data_df <- convert_list_to_df(data_list)
+  data_df <- convert_list_to_df(data_list, aqs_code)
   return(data_df)
 }
