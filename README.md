@@ -39,4 +39,4 @@ usaquen_data <- download_rmcab_data(usaquen_code,
 ```
 
 # Acknowledgment
-Thanks to [RCMA](https://www.ambientebogota.gov.co/estaciones-rmcab) for sharing their air quality data.
+Thanks to [RMCAB](https://www.ambientebogota.gov.co/estaciones-rmcab) for sharing their air quality data.
