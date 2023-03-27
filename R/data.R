@@ -14,3 +14,17 @@
 #' @examples
 #' rmcab_aqs
 "rmcab_aqs"
+
+#' RMCAB AQS parameters
+#'
+#' RMCAB air quality stations parameters
+#' Use this to check the units of columsn in returned data.frame
+#' #'
+#' @format A data frame with 13 observations and 2 variables:
+#' \describe{
+#' \item{name}{RMCAB parameter name.}
+#' \item{units}{Parameter unit.}
+#' }
+#' @examples
+#' rmcab_params
+"rmcab_params"

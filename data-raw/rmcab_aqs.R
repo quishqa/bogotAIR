@@ -5,4 +5,7 @@ names(rmcab_aqs)[c(1, 2)] <- c("aqs", "code")
 rmcab_aqs$lat <- rmcab$location$latitude
 rmcab_aqs$lon<- rmcab$location$longitude
 
-usethis::use_data(rmcab_aqs, overwrite = TRUE)
+rmcab_params <- as.data.frame(rmcab[rmcab$stationId == 32, ]$monitors)
+rmcab_params <- rmcab_params[c("name", "units")]
+
+usethis::use_data(rmcab_aqs, rmcab_params, overwrite = TRUE)
