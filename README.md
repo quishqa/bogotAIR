@@ -30,12 +30,12 @@ library(bogotAIR)
 rmcab_aqs # To check Usaquen code
 
 usaquen_code <- 1
-start_date <- "01-01-2023"
-end_date <- "07-01-2023
+start <- "01-01-2023"
+end <- "07-01-2023
 
-usaquen_data <- download_rmcab_data(usaquen_code, 
-                                    start_date,
-                                    end_date)
+usaquen_data <- download_rmcab_data(aqs_code = usaquen_code, 
+                                    start_date = start,
+                                    end_date = end)
 ```
 
 # Acknowledgment
