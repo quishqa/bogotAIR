@@ -36,6 +36,8 @@ end <- "07-01-2023
 usaquen_data <- download_rmcab_data(aqs_code = usaquen_code, 
                                     start_date = start,
                                     end_date = end)
+
+rmcab_params # To check parameters units
 ```
 
 # Acknowledgment
