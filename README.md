@@ -31,7 +31,7 @@ rmcab_aqs # To check Usaquen code
 
 usaquen_code <- 1
 start <- "01-01-2023"
-end <- "07-01-2023
+end <- "07-01-2023"
 
 usaquen_data <- download_rmcab_data(aqs_code = usaquen_code, 
                                     start_date = start,
