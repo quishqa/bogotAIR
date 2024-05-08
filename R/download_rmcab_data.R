@@ -46,6 +46,9 @@ download_rmcab_data <- function(aqs_code, start_date, end_date){
 
   data_parsed <- httr::content(data_raw, as="parsed")
   data_aqs <- data_parsed$Data
+  if (is.null(data_aqs)){
+    stop('Something goes wrong, maybe try short periods (max 10 years)!')
+  }
   n_obs <- data_parsed$count
 
   data_list <- data_aqs[seq(1, n_obs)]
